@@ -46,3 +46,15 @@ Developers clone the repository (with submodules), initialize the environment vi
 - **Command example for eBPF Build:**
   ```bash
   clang -target bpf -O2 -g -Werror -Ic:/ebpf/include -c droppacket.c -o droppacket.o
+
+**Summary of current failures and immediate fixes**
+- bootstrap.ps1 shows missing: **cl, signtool, vswhere, clang** - these are Visual Studio / Windows SDK / Clang toolchain issues.
+- build-ebpf.ps1 failed because CMake was run from the wrong folder (it expected the repo root with CMakeLists.txt but worked against the temp clone path).
+- collect-evidence.ps1 failed because artifacts/evidence.zip was open/locked.
+- gh CLI is not installed, so release automation can't run.
+
+build-ebpf.ps1 failed because CMake was run from the wrong folder (it expected the repo root with CMakeLists.txt but worked against the temp clone path).
+
+collect-evidence.ps1 failed because artifacts/evidence.zip was open/locked.
+
+gh CLI is not installed, so release automation can't run.
