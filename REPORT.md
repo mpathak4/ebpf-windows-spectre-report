@@ -52,9 +52,3 @@ Developers clone the repository (with submodules), initialize the environment vi
 - build-ebpf.ps1 failed because CMake was run from the wrong folder (it expected the repo root with CMakeLists.txt but worked against the temp clone path).
 - collect-evidence.ps1 failed because artifacts/evidence.zip was open/locked.
 - gh CLI is not installed, so release automation can't run.
-
-build-ebpf.ps1 failed because CMake was run from the wrong folder (it expected the repo root with CMakeLists.txt but worked against the temp clone path).
-
-collect-evidence.ps1 failed because artifacts/evidence.zip was open/locked.
-
-gh CLI is not installed, so release automation can't run.
